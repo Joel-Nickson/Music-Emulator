@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <style>
+            .hexagon-wrapper{
+            transition: 1.5s ease-in-out;
+        }
+        .hexagon-wrapper:hover {
+            transform: rotate(180deg);
+        }
+        </style>
+        <!-- Audio elements go here! -->
+        <script>
+            const soundskey = ['harp','bass-drum','congas'];
+            const soundslink =[ './sounds/harp.wav',
+                                './sounds/bass-drum.wav',
+                                './sounds/congas.wav'
+                            ];
+            console.log(soundskey);
+            document.body.innerHTML += wraps();
+            function wraps(){
+                let d='';
+                for (let sound in soundskey){
+                    d+= `         
+                    <audio id="${soundskey[sound]}">
+                        <source src="${soundslink[sound]}" type="audio/wav">
+                        Hi, your browser does not support audio files.
+                    </audio>
+                    
+                    <div class="hexagon-wrapper">
+                        <div onclick="toggleAudio('${soundskey[sound]}',2)" class="hexagon">
+                            <i class="fab">${soundskey[sound]}</i>
+                        </div>
+                    </div>`;
+                }
+                return (`<div>${d}</div> `)
+            }
+            // Create the playing boolean list
+            function toggleAudio(sound, number) {
+                var audio = document.getElementById(sound);
+                audio.play();
+                console.log("Audio toggled")
+            }
+        </script>
+    
+    </body>
+</html>
