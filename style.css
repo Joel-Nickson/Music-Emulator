@@ -9,7 +9,7 @@ body {
 }
 
 .hexagon-wrapper {
-  margin: auto;
+  /* margin: auto; */
   display: flex;
   text-align: initial;
   width: 200px;
@@ -29,7 +29,6 @@ body {
   justify-content: center;
   transition: 0.5s;
   
-  /* border-radius: 30px; */
 }
 
 .hexagon i {
@@ -37,7 +36,7 @@ body {
   margin: auto;
   font-size: 50px;
   color: transparent;
-  background: linear-gradient(45deg, #a58fe9, #50da67);
+  background: linear-gradient(45deg, #756c8f, #59b869);
   background-clip: text;
   -webkit-background-clip: text;
   
